@@ -3,7 +3,7 @@ dns:
   enable: true
   listen: 0.0.0.0:1053
   ipv6: true
-  respect-rules: false
+  respect-rules: true
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
   fake-ip-filter-mode: blacklist
@@ -14,23 +14,26 @@ dns:
     - "time.*.com"
 
   default-nameserver:
-    - 223.5.5.5  # 阿里 DNS
-    - 119.29.29.29  # 腾讯 DNS
+    - 223.5.5.5  # 阿里DNS
+    - 119.29.29.29  # 腾讯DNS
+    - 114.114.114.114  # 114DNS
 
   nameserver:
-    - 223.5.5.5  # 阿里 DNS，国内解析最快
-    - 119.29.29.29  # 腾讯 DNS，国内备用
-    - 114.114.114.114  # 114 DNS，国内备用
+    - 223.5.5.5  # 阿里DNS
+    - 119.29.29.29  # 腾讯DNS
+    - 114.114.114.114  # 114DNS
   
   proxy-server-nameserver:
-    - 1.1.1.1
-    - 8.8.8.8
+    - https://doh.pub/dns-query  # 腾讯DoH，响应时间: 156.10ms
+    - https://0ms.dev/dns-query  # 备用DoH，响应时间: 1529.75ms
+    - 1.0.0.1  # Cloudflare备用
+    - 8.8.4.4  # Google备用
   
   fallback:
-  - 1.1.1.1  # Cloudflare
-  - 8.8.8.8  # Google
-  - 9.9.9.9  # Quad9
-  - 185.228.169.9  # CleanBrowsing
+    - https://doh.pub/dns-query  # 腾讯DoH，响应时间: 156.10ms
+    - https://0ms.dev/dns-query  # 备用DoH，响应时间: 1529.75ms
+    - 1.0.0.1  # Cloudflare备用
+    - 8.8.4.4  # Google备用
 
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
@@ -127,3 +130,6 @@ rule-providers:
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   
   direct_list: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/direct-list.txt"}
+
+
+
