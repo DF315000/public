@@ -3,7 +3,7 @@ dns:
   enable: true
   listen: 0.0.0.0:1053
   ipv6: true
-  respect-rules: true
+  respect-rules: false
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
   fake-ip-filter-mode: blacklist
@@ -21,6 +21,10 @@ dns:
     - 223.5.5.5  # 阿里 DNS，国内解析最快
     - 119.29.29.29  # 腾讯 DNS，国内备用
     - 114.114.114.114  # 114 DNS，国内备用
+  
+  proxy-server-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
   
   fallback:
   - 1.1.1.1  # Cloudflare
@@ -123,6 +127,3 @@ rule-providers:
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   
   direct_list: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/direct-list.txt"}
-
-
-
