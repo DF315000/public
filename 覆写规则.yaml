@@ -24,16 +24,16 @@ dns:
     - 114.114.114.114  # 114DNS
   
   proxy-server-nameserver:
-    - https://doh.pub/dns-query  # 腾讯DoH，响应时间: 156.10ms
-    - https://0ms.dev/dns-query  # 备用DoH，响应时间: 1529.75ms
-    - 1.0.0.1  # Cloudflare备用
-    - 8.8.4.4  # Google备用
+    - 114.114.114.114  # 114DNS
+    - 119.29.29.29  # 腾讯DNS
+    - 8.8.8.8  # Google
+    - 1.1.1.1  # Cloudflare
   
   fallback:
-    - https://doh.pub/dns-query  # 腾讯DoH，响应时间: 156.10ms
-    - https://0ms.dev/dns-query  # 备用DoH，响应时间: 1529.75ms
-    - 1.0.0.1  # Cloudflare备用
-    - 8.8.4.4  # Google备用
+    - 114.114.114.114  # 114DNS
+    - 119.29.29.29  # 腾讯DNS
+    - 8.8.8.8  # Google
+    - 1.1.1.1  # Cloudflare
 
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
@@ -130,6 +130,3 @@ rule-providers:
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   
   direct_list: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/direct-list.txt"}
-
-
-
