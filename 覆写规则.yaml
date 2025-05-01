@@ -40,7 +40,7 @@ dns:
 pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动,♻️ 香港自动, ♻️ 亚太自动,♻️ 美国自动, 📹 YouTube自动, 🤖 OpenAI自动, 🌐 全部节点, DIRECT]}
 proxy-groups:
   - {name: 🚀 默认代理, <<: *pr}
-  - {name: 🌐 全部节点, type: select, include-all: true}
+  - {name: 🚀 默认代理, type: select, proxies: [🚀 默认代理, ♻️ 全部自动,♻️ 香港自动, ♻️ 亚太自动,♻️ 美国自动, 📹 YouTube自动, 🤖 OpenAI自动, 🌐 全部节点, DIRECT]}
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 20, interval: 300}
   - {name: ♻️ 亚太自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|日|台|韩|SG|JP|TW|KR|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea))^((?!.*(compatible|cmpatibal|兼容|不能|官网)).)*$"}
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网)).)*$"}
