@@ -41,7 +41,7 @@ pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 亚太自动,♻️ �
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 亚太自动,♻️ 香港自动,♻️ 美国自动, 🌐 全部节点, DIRECT]}
   - {name: 🌐 全部节点, type: select, include-all: true}
-  - {name: ♻️ 亚太自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|日|台|韩|美|SG|JP|TW|KR|US|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea|(?i)America))^((?!.*(compatible|cmpatibal|兼容|不能|官网)).)*$"}
+  - {name: ♻️ 亚太自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|日|台|韩|SG|JP|TW|KR|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea))^((?!.*(compatible|cmpatibal|兼容|不能|官网)).)*$"}
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网)).)*$"}
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新|官网)).)*$"}
 #  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
@@ -130,3 +130,6 @@ rule-providers:
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   
   direct_list: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/direct-list.txt"}
+
+
+
