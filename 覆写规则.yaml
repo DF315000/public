@@ -37,9 +37,9 @@ dns:
 
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
-pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 亚太自动,♻️ 香港自动, ♻️ 美国自动, 🌐 全部节点, DIRECT]}
+pr: &pr {type: select, proxies: [♻️ 全部自动, ♻️ 亚太自动,♻️ 香港自动, ♻️ 美国自动, 🌐 全部节点, DIRECT]}
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 亚太自动,♻️ 香港自动, ♻️ 美国自动, 🌐 全部节点, DIRECT]}
+  - {name: 🚀 默认代理, <<: *pr}
   - {name: 🌐 全部节点, type: select, include-all: true}
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 20, interval: 300}
   - {name: ♻️ 亚太自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|日|台|韩|SG|JP|TW|KR|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea))^((?!.*(compatible|cmpatibal|兼容|不能|官网)).)*$"}
