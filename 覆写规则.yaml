@@ -1,3 +1,97 @@
+    # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
+# 机场订阅
+proxy-providers:
+  免费筛选:
+    url: "https://a001.maxdf.uk:8299/api/file/mihomo"
+    type: http
+    cron-expression: "15 */4 * * *"
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
+
+
+# 节点信息
+proxies:
+  - {name: 直连, type: direct}
+
+# 全局配置 
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+bind-address: "*"
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+find-process-mode: 'off'
+# interface-name: en0
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+disable-keep-alive: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 控制面板
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: "/etc/mihomo/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - "+.v2ex.com"
+  skip-domain:
+    - "rule-set:private_domain,cn_domain"
+    - "dlg.io.mi.com"
+    - "+.push.apple.com"
+    - "+.wechat.com"
+    - "+.weibo.com"
+    - "+.baidu.com"
+    - "+.taobao.com"
+    - "+.tmall.com"
+    - "+.jd.com"
+    - "+.pinduoduo.com"
+    - "+.yixia.com"
+    - "+.kugou.com"
+    - "+.kuwo.cn"
+    - "+.kuwo.com"
+    - "+.wechatapp.com"
+    - "+.weixin.qq.com"
+    - "+.weixin.com"
+    - "+.weixin.cn"
+    - "+.weixin.net"
+    - "+.weixin.org"
+    - "+.weixinapp.com"
+    - "+.qicq.com"
+    - "+.qq.com"
+    - "+.qqmusic.com"
+    - "+.qqmusic.net"
+    - "+.qqmusic.org"
+    - "+.qqmusic.com"
+    - "+.qqmusic.cn"
+    - "+.qqmusic.net"
+    - "+.maxdf.uk"
+    - "+.douyin.com"
+    - "+.windy.com"
+
 # DNS配置（通用格式）
 dns:
   enable: true
@@ -62,7 +156,7 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - RULE-SET,private_domain,DIRECT
-  - RULE-SET,ai,🤖 AI
+  - RULE-SET,ai,🤖 OpenAI
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,github_domain,🚀 默认代理  # GitHub
