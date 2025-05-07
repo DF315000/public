@@ -81,6 +81,7 @@ rules:
   - DOMAIN-SUFFIX,windy.com,DIRECT
   - DOMAIN-SUFFIX,bitwarden.com,DIRECT
   - DOMAIN-SUFFIX,maxdf.uk,DIRECT
+  - DOMAIN-SUFFIX,ebay.com,DIRECT
   - RULE-SET,cn_ip,DIRECT,no-resolve
   - RULE-SET,cn_domain,DIRECT
   - RULE-SET,direct_list,DIRECT
