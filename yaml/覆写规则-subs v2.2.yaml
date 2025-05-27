@@ -37,14 +37,16 @@ dns:
 
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
-pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 亚太自动,♻️ 香港自动,♻️ 美国自动,📹 YouTube自动, 🤖 OpenAI自动, 🌐 全部节点, DIRECT]}
+pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 自动选择, ♻️ 亚太自动,♻️ 香港自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, 📹 YouTube自动, 🤖 OpenAI自动, 🌐 全部节点, DIRECT]}
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 亚太自动,♻️ 香港自动,♻️ 美国自动,📹 YouTube自动, 🤖 OpenAI自动, 🌐 全部节点, DIRECT]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 自动选择, ♻️ 亚太自动,♻️ 香港自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, 📹 YouTube自动, 🤖 OpenAI自动, 🌐 全部节点, DIRECT]}
   - {name: 🌐 全部节点, type: select, include-all: true}
-  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
-  - {name: ♻️ 亚太自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|日|台|韩|美|SG|JP|TW|KR|US|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea|(?i)America))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网|直连|direct|DIRECT)).)*$"}
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新|官网|直连|direct|DIRECT)).)*$"}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(官网|节点|流量|套餐|直连|DIRECT|direct)).)*$"}
+  - {name: ♻️ 亚太自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong|新|日|台|韩|美|SG|JP|TW|KR|US|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea|(?i)America))^((?!.*(compatible|cmpatibal|兼容|不能|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚)).)*$"}
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚)).)*$"}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚)).)*$" }
+  - {name: ♻️ 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚)).)*$"}
+  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚)).)*$"}
   - {name: 📹 YouTube自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Youtube|youtube))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
   - {name: 🤖 OpenAI自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Openai|openai))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
 #  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
@@ -52,9 +54,6 @@ proxy-groups:
 #  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
 #  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
 #  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-#  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-#  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
-#  - {name: ♻️ 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$"}
   - {name: 📹 YouTube, <<: *pr}
 #  - {name: 🍀 Google, <<: *pr}
   - {name: 🤖 AI, <<: *pr}
@@ -81,7 +80,8 @@ rules:
   - DOMAIN-SUFFIX,windy.com,DIRECT
   - DOMAIN-SUFFIX,bitwarden.com,DIRECT
   - DOMAIN-SUFFIX,maxdf.uk,DIRECT
-  - DOMAIN-SUFFIX,ebay.com,DIRECT
+  - DOMAIN-KEYWORD,gemini,🤖 AI
+  - DOMAIN-SUFFIX,mirror-earth.com,DIRECT
   - RULE-SET,cn_ip,DIRECT,no-resolve
   - RULE-SET,cn_domain,DIRECT
   - RULE-SET,direct_list,DIRECT
