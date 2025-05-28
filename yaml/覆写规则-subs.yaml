@@ -54,43 +54,53 @@ proxy-groups:
 #  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
 #  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
 #  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+
   - {name: 📹 YouTube, <<: *pr}
-#  - {name: 🍀 Google, <<: *pr}
   - {name: 🤖 AI, <<: *pr}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 🐬 OneDrive, <<: *pr}
   - {name: 🍎 Apple, <<: *pr}
   - {name: 🪟 Microsoft, <<: *pr}
   - {name: 🐟 漏网之鱼, <<: *pr}
+  - {name: ✈️ Speedtest, <<: *pr}
 #  - {name: 👨🏿‍💻 GitHub, <<: *pr}
 #  - {name: 🎵 TikTok, <<: *pr}
 #  - {name: 🎥 NETFLIX, <<: *pr}
-#  - {name: ✈️ Speedtest, <<: *pr}
+#  - {name: 🍀 Google, <<: *pr}
 #  - {name: �� PayPal, <<: *pr}
 
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
-  - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - RULE-SET,private_domain,DIRECT
+  - RULE-SET,self_proxy,🚀 默认代理
+  - RULE-SET,self_direct,DIRECT
+  
+  - RULE-SET,douyin,DIRECT
+  - RULE-SET,weixin,DIRECT
+  
+  - RULE-SET,AI_openai,🤖 AI
+  - RULE-SET,AI_gemini,🤖 AI
+  - RULE-SET,AI_claude,🤖 AI
+  - RULE-SET,AI_grok,🤖 AI
   - RULE-SET,ai,🤖 AI
+  
+  - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,apple_domain,🍎 Apple
+
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,github_domain,🚀 默认代理  # GitHub
-  - DOMAIN-SUFFIX,windy.com,DIRECT
-  - DOMAIN-SUFFIX,bitwarden.com,DIRECT
-  - DOMAIN-SUFFIX,maxdf.uk,DIRECT
-  - DOMAIN-KEYWORD,gemini,🤖 AI
-  - DOMAIN-SUFFIX,mirror-earth.com,DIRECT
+  - RULE-SET,speedtest_domain,✈️ Speedtest
+  
   - RULE-SET,cn_ip,DIRECT,no-resolve
   - RULE-SET,cn_domain,DIRECT
   - RULE-SET,direct_list,DIRECT
-  - RULE-SET,onedrive_domain,🐬 OneDrive
-  - RULE-SET,apple_domain,🍎 Apple
-
+  
   - RULE-SET,proxylite,🚀 默认代理
-  - RULE-SET,speedtest_domain,🚀 默认代理  #✈️ Speedtest
-  - RULE-SET,microsoft_domain,🪟 Microsoft
+
+  
   
   - RULE-SET,youtube_domain,🚀 默认代理  #📹 YouTube
   - RULE-SET,google_ip,🚀 默认代理,no-resolve #🍀 Google
@@ -99,6 +109,7 @@ rules:
   - RULE-SET,tiktok_domain,🚀 默认代理  #🎵 TikTok
   - RULE-SET,netflix_domain,🚀 默认代理  #🎥 NETFLIX
   - RULE-SET,netflix_ip,🚀 默认代理,no-resolve  #🎥 NETFLIX
+
   - RULE-SET,gfw_domain,🚀 默认代理
   - RULE-SET,geolocation-!cn,🚀 默认代理
   - MATCH,🐟 漏网之鱼
@@ -134,3 +145,14 @@ rule-providers:
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   
   direct_list: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/direct-list.txt"}
+  
+  self_proxy: { <<: *class, url: "https://raw.githubusercontent.com/DF315000/public/refs/heads/main/list/proxy.list"}
+  self_direct: { <<: *class, url: "https://raw.githubusercontent.com/DF315000/public/refs/heads/main/list/direct.list"}
+  
+  AI_openai: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/OpenAI/OpenAI.list"}
+  AI_gemini: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Gemini/Gemini.list"}
+  AI_claude: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Claude/Claude.list"}
+  AI_grok: { <<: *domain, url: "https://raw.githubusercontent.com/DF315000/public/refs/heads/main/list/grok.list"}
+  
+  douyin: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/DouYin/DouYin.list"}
+  weixin: { <<: *domain, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/WeChat/WeChat.list"}
