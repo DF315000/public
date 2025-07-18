@@ -51,14 +51,14 @@ proxy-groups:
   - {name: 🐟 漏网之鱼, <<: *pr}
 
   - {name: 🌐 全部节点, type: select, include-all: true}
-  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(官网|节点|流量|套餐|重置|直连|DIRECT|direct|0.5|0.5倍|0.5x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🔯 亚太均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(港|HK|(?i)Hong|新|日|台|韩|美|SG|JP|TW|KR|US|(?i)Singapore|(?i)Japan|(?i)Taiwan|(?i)Korea|(?i)America))^((?!.*(compatible|cmpatibal|兼容|不能|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: ♻️ 低倍自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(0\\.1|0\\.2|0\\.5|0\\.1倍|0\\.2倍|0\\.5倍|0\\.1x|0\\.2x|0\\.5x))^((?!.*(官网|节点|流量|套餐|重置|直连|DIRECT|direct|1\\.0|1倍|1x|2\\.0|2倍|2x|3\\.0|3倍|3x|4\\.0|4倍|4x|5\\.0|5倍|5x)).)*$"}
-  - {name: 🔯 低倍均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(0\\.1|0\\.2|0\\.5|0\\.1倍|0\\.2倍|0\\.5倍|0\\.1x|0\\.2x|0\\.5x))^((?!.*(官网|节点|流量|套餐|重置|直连|DIRECT|direct|1\\.0|1倍|1x|2\\.0|2倍|2x|3\\.0|3倍|3x|4\\.0|4倍|4x|5\\.0|5倍|5x)).)*$"}
-  - {name: 🇭🇰 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇯🇵 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|官网|节点|流量|套餐|重置|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇸🇬 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇺🇸 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(官网|节点|流量|套餐|重置|直连|DIRECT|direct|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🔯 亚太均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(港|HK|(?i)Hong|新|SG|(?i)Singapore|日|JP|(?i)Japan|台|TW|(?i)Taiwan|韩|KR|(?i)Korea|美|US|(?i)States|America))^((?!.*(compatible|cmpatibal|兼容|不能|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: ♻️ 低倍自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x))^((?!.*(官网|节点|流量|套餐|重置|直连|DIRECT|direct|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🔯 低倍均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x))^((?!.*(官网|节点|流量|套餐|重置|直连|DIRECT|direct|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇭🇰 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇯🇵 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|官网|节点|流量|套餐|重置|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇸🇬 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇺🇸 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
   - {name: 📹 YouTube自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Youtube|youtube))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
   - {name: 📹 YouTube均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(Youtube|youtube))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
   - {name: 🤖 AI自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Openai|openai))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
@@ -104,15 +104,20 @@ rules:
   - RULE-SET,Google,🚀 默认代理
   - RULE-SET,google_ip,🚀 默认代理,no-resolve
   - RULE-SET,GitHub,🚀 默认代理
+  - RULE-SET,Instagram,🚀 默认代理
+  - RULE-SET,Twitter,🚀 默认代理
+  - RULE-SET,Facebook,🚀 默认代理
   - RULE-SET,PayPal,🚀 默认代理
   #国际媒体
   - RULE-SET,YouTube,📹 YouTube
   - RULE-SET,GlobalMedia,📹 YouTube
   #其他规则集
+  - RULE-SET,Proxy_Classical,🚀 默认代理
   - RULE-SET,ChinaIPs,DIRECT
   - RULE-SET,ChinaMaxNoMedia,DIRECT
-  - RULE-SET,proxy,🚀 默认代理
-  - RULE-SET,gfw,🚀 默认代理
+#  - RULE-SET,proxy,🚀 默认代理
+#  - RULE-SET,gfw,🚀 默认代理
+#  - RULE-SET,Global_Classical,🚀 默认代理
   - MATCH,🐟 漏网之鱼
 
 # 规则集
@@ -127,39 +132,45 @@ rule-anchor:
 
 rule-providers: 
   #自定义规则集
-  private_direct_list: { <<: *class, url: "https://github-public.maxdf.uk/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/direct.list"}
-  private_proxy_list: { <<: *class, url: "https://github-public.maxdf.uk/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/proxy.list"}
+  private_direct_list: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/direct.list"}
+  private_proxy_list: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/proxy.list"}
   #国内网站
-  DouYin: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/DouYin/DouYin.yaml"}
-  WeChat: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/WeChat/WeChat.yaml"}
-  ChinaMedia: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMedia/ChinaMedia.yaml"}
+  DouYin: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DouYin/DouYin.yaml"}
+  WeChat: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml"}
+  ChinaMedia: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml"}
   #国际公司国内服务
-  Bing: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bing/Bing.yaml"}
-  OneDrive: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml"}
-  Microsoft: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml"}
-  Apple: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml"}
+  Bing: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml"}
+  OneDrive: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml"}
+  Microsoft: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml"}
+  Apple: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml"}
   #国际ai
-  OpenAI: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml"}
-  Gemini: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml"}
-  Claude: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml"}
-  self-ai: { <<: *class, url: "https://github-public.maxdf.uk/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/AI.list"}
+  OpenAI: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml"}
+  Gemini: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml"}
+  Claude: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml"}
+  self-ai: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/AI.list"}
   #指定网站
-  Telegram: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"}
+  Telegram: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"}
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
-  Speedtest: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Speedtest/Speedtest.yaml"}
-  Google: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"}
+  Speedtest: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml"}
+  Google: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml"}
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
-  GitHub: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml"}
-  PayPal: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PayPal/PayPal.yaml"}
+  GitHub: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml"}
+  PayPal: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml"}
+  Instagram: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml"}
+  Twitter: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml"}
+  Facebook: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml"}
+
   #国际媒体
-  YouTube: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"}
-  GlobalMedia: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml"}
-  #Netflix: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml"} #Netflix (纯域名类型)
+  YouTube: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"}
+  GlobalMedia: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml"}
+  #Netflix: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml"} #Netflix (纯域名类型)
   #netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"} #Netflix IP规则集
-  #TikTok: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml"} #TikTok
+  #TikTok: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"} #TikTok
 
   # 其他规则集
-  ChinaIPs: { <<: *yaml_ip, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml"}
-  ChinaMaxNoMedia: { <<: *yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMaxNoMedia/ChinaMaxNoMedia_Classical.yaml"}
+  ChinaIPs: { <<: *yaml_ip, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml"}
+  ChinaMaxNoMedia: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMaxNoMedia/ChinaMaxNoMedia_Classical.yaml"}
   proxy: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/proxy.mrs"}
   gfw: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  Proxy_Classical: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Classical.yaml"}
+  #Global_Classical: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml"}
