@@ -48,34 +48,19 @@ proxy-groups:
   - {name: 🐬 OneDrive, <<: *pr}
   - {name: 🍎 Apple, <<: *pr}
   - {name: 🪟 Microsoft, <<: *pr}
-  - {name: 🐟 漏网之鱼, <<: *pr}
-
-  - {name: 🌐 全部节点, type: select, include-all: true}
-  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(官网|节点|流量|套餐|重置|直连|DIRECT|direct|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🔯 亚太均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(港|HK|(?i)Hong|新|SG|(?i)Singapore|日|JP|(?i)Japan|台|TW|(?i)Taiwan|韩|KR|(?i)Korea|美|US|(?i)States|America))^((?!.*(compatible|cmpatibal|兼容|不能|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: ♻️ 低倍自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x))^((?!.*(官网|节点|流量|套餐|重置|直连|DIRECT|direct|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🔯 低倍均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x))^((?!.*(官网|节点|流量|套餐|重置|直连|DIRECT|direct|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇭🇰 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇯🇵 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|官网|节点|流量|套餐|重置|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇸🇬 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
-  - {name: 🇺🇸 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(69云|官网|节点|流量|套餐|重置|直连|DIRECT|direct|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🔯 亚太均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(港|HK|(?i)Hong|新|SG|(?i)Singapore|日|JP|(?i)Japan|台|TW|(?i)Taiwan|韩|KR|(?i)Korea|美|US|(?i)States|America))^((?!.*(69云|compatible|cmpatibal|兼容|不能|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: ♻️ 低倍自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(sub|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x))^((?!.*(69云|官网|节点|流量|套餐|重置|直连|DIRECT|direct|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🔯 低倍均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(sub|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x))^((?!.*(69云|官网|节点|流量|套餐|重置|直连|DIRECT|direct|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇭🇰 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(69云|sub|台|日|韩|新|深|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇯🇵 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(69云|sub|港|台|韩|新|美|官网|节点|流量|套餐|重置|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇸🇬 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(69云|sub|港|台|日|韩|美|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
+  - {name: 🇺🇸 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(69云|sub|港|台|日|韩|新|官网|节点|流量|套餐|直连|DIRECT|direct|尼日利亚|0.5|0.5倍|0.5x|0.2|0.2倍|0.2x|0.1|0.1倍|0.1x|2.0|2倍|2x|3.0|3倍|3x|4.0|4倍|4x|5.0|5倍|5x)).)*$"}
   - {name: 📹 YouTube自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Youtube|youtube))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
   - {name: 📹 YouTube均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(Youtube|youtube))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
   - {name: 🤖 AI自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Openai|openai))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
   - {name: 🤖 AI均衡, type: load-balance, include-all: true, interval: 300, strategy: sticky-sessions, filter: "(?=.*(Openai|openai))^((?!.*(compatible|cmpatibal|兼容|不能|官网|直连|direct|DIRECT)).)*$"}
-
-#  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
-#  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
-#  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
-#  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-#  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-
-#  - {name: ✈️ Speedtest, <<: *pr}
-#  - {name: 👨🏿‍💻 GitHub, <<: *pr}
-#  - {name: 🎵 TikTok, <<: *pr}
-#  - {name: 🎥 NETFLIX, <<: *pr}
-#  - {name: 🍀 Google, <<: *pr}
-#  - {name: �� PayPal, <<: *pr}
 
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
@@ -86,6 +71,7 @@ rules:
   #国内网站
   - RULE-SET,DouYin,DIRECT
   - RULE-SET,WeChat,DIRECT
+  - RULE-SET,BiliBili,DIRECT
   - RULE-SET,ChinaMedia,DIRECT
   #国际公司国内服务 
   - RULE-SET,Bing,🪟 Microsoft
@@ -96,6 +82,7 @@ rules:
   - RULE-SET,OpenAI,🤖 AI
   - RULE-SET,Gemini,🤖 AI
   - RULE-SET,Claude,🤖 AI
+  - RULE-SET,Copilot,🤖 AI
   - RULE-SET,self-ai,🤖 AI
   #指定网站
   - RULE-SET,Telegram,📲 Telegram
@@ -137,6 +124,7 @@ rule-providers:
   #国内网站
   DouYin: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DouYin/DouYin.yaml"}
   WeChat: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml"}
+  BiliBili: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"}
   ChinaMedia: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml"}
   #国际公司国内服务
   Bing: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml"}
@@ -148,6 +136,7 @@ rule-providers:
   Gemini: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml"}
   Claude: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml"}
   self-ai: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/DF315000/public/refs/heads/main/list/AI.list"}
+  Copilot: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml"}  
   #指定网站
   Telegram: { <<: *yaml, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"}
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
