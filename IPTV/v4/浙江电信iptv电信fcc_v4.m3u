@@ -1,4 +1,5 @@
 #EXTM3U
+# 更新时间: 2026-03-14 22:57
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://myepg.org/Zhejiang_Telecom_IPTV/Logo/CCTV1.png" group-title="央视",CCTV1综合_电信fcc
 https://iptv.v4.maxdf.click:16666/rtp/233.50.201.118:5140?fcc=220.191.136.24%3A8027
 #EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://myepg.org/Zhejiang_Telecom_IPTV/Logo/CCTV2.png" group-title="央视",CCTV2财经_电信fcc
