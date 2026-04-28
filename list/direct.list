@@ -22,3 +22,6 @@ DOMAIN-KEYWORD,shenhua.cc
 DOMAIN-KEYWORD,chnenergy.com
 DOMAIN-KEYWORD,epicgames.com
 DOMAIN-KEYWORD,ottiptv.cc
+DOMAIN-SUFFIX,chnenergy.com.cn
+IP-CIDR,10.128.0.0/16
+IP-CIDR,10.0.0.0/8
