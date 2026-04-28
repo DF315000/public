@@ -19,7 +19,6 @@ DOMAIN-SUFFIX,hidoha.net
 DOMAIN-SUFFIX,hidns.co
 DOMAIN-SUFFIX,fafaka.shop
 DOMAIN-KEYWORD,shenhua.cc
-DOMAIN-KEYWORD,chnenergy.com
 DOMAIN-KEYWORD,epicgames.com
 DOMAIN-KEYWORD,ottiptv.cc
 DOMAIN-SUFFIX,chnenergy.com.cn
@@ -27,3 +26,5 @@ DOMAIN-SUFFIX,chnenergy.com.cn
 #IP
 IP-CIDR,10.128.0.0/16,no-resolve
 IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,172.16.0.0/12,no-resolve
+IP-CIDR,192.168.0.0/16,no-resolve
