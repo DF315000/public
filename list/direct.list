@@ -22,3 +22,5 @@ DOMAIN-KEYWORD,epicgames.com
 DOMAIN-KEYWORD,ottiptv.cc
 #校园网联合镜像站
 DOMAIN-SUFFIX,cernet.edu.cn
+#国内网络直播转换
+DOMAIN-SUFFIX,cdn.ttvb.eu.org
